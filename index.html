@@ -2,87 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mompox Colonial</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin: 0;
-      padding: 0;
       background-image: url("img/fondoprincipal.jpg");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       color: white;
-    }
-
-    header {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 3em;
       margin: 0;
+      padding: 0;
     }
-
-    h2 {
-      font-size: 2em;
+    header {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+    }
+    h1, h2, h3 {
       margin: 10px 0;
     }
-
-    p {
-      font-size: 1.2em;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    section {
+    #menu, section {
       display: none;
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.6);
       margin: 20px;
+      border-radius: 15px;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
     }
-
-    #menu {
+    #menu.active, section.active {
       display: block;
-      padding: 50px;
+      opacity: 1;
     }
-
     button {
-      padding: 10px 20px;
       margin: 10px;
-      cursor: pointer;
-      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
       border: none;
-      font-size: 1em;
+      cursor: pointer;
+      background-color: #f0a500;
+      color: white;
+      transition: 0.3s;
     }
-
     button:hover {
-      background-color: #444;
-      color: white;
+      background-color: #d48806;
     }
-
+    img {
+      width: 250px;
+      height: 180px;
+      margin: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    }
     table {
-      width: 100%;
+      width: 80%;
+      margin: 20px auto;
       border-collapse: collapse;
-      margin: 20px 0;
-      color: white;
+      background: white;
+      color: black;
     }
-
     th, td {
-      border: 1px solid white;
+      border: 1px solid #333;
       padding: 10px;
     }
-
-    img {
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
-    }
   </style>
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('section, #menu').forEach(s => {
+        s.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+    }
+
+    window.onload = () => {
+      document.getElementById("menu").classList.add("active");
+    };
+  </script>
 </head>
 <body>
   <header>
@@ -91,93 +88,114 @@
     <p>Descubre la magia colonial de Santa Cruz de Mompox, patrimonio cultural de la humanidad, llena de historia, arquitectura y tradición.</p>
   </header>
 
-  <!-- MENÚ PRINCIPAL -->
-  <section id="menu">
+  <!-- Menú principal -->
+  <div id="menu">
     <h2>Explora Mompox</h2>
     <button onclick="mostrarSeccion('iglesias')">Iglesias</button>
     <button onclick="mostrarSeccion('gastronomia')">Gastronomía</button>
-    <button onclick="mostrarSeccion('historia')">Historia</button>
+    <button onclick="mostrarSeccion('lugares')">Turismo y Lugares Emblemáticos</button>
     <button onclick="mostrarSeccion('cultura')">Cultura y Tradiciones</button>
-  </section>
+    <button onclick="mostrarSeccion('cementerio')">Cementerio</button>
+  </div>
 
-  <!-- SECCIÓN IGLESIAS -->
+  <!-- Sección Iglesias -->
   <section id="iglesias">
     <h2>Iglesias de Mompox</h2>
-    <p>Mompox es reconocida por su riqueza arquitectónica y religiosa. Sus iglesias son un reflejo de la tradición colonial y del legado histórico de la ciudad.</p>
-
+    <p>Mompox cuenta con majestuosas iglesias coloniales que reflejan su historia y tradición.</p>
     <table>
-      <tr>
-        <th>Nombre de la Iglesia</th>
-        <th>Descripción</th>
-      </tr>
-      <tr>
-        <td>Iglesia de la Concepción</td>
-        <td>Ubicada en el centro histórico, frente a la casona. Es uno de los templos más representativos de Mompox.</td>
-      </tr>
-      <tr>
-        <td>Iglesia de San Agustín</td>
-        <td>Conserva un estilo colonial y es parte fundamental del patrimonio religioso de la ciudad.</td>
-      </tr>
-      <tr>
-        <td>Iglesia de San Francisco</td>
-        <td>Conocida por su sencillez y su valor histórico en la comunidad momposina.</td>
-      </tr>
-      <tr>
-        <td>Iglesia de San Juan de Dios</td>
-        <td>Un templo con gran valor patrimonial que conserva elementos originales.</td>
-      </tr>
-      <tr>
-        <td>Iglesia de Santa Bárbara</td>
-        <td>Famosa por su arquitectura barroca y su icónica torre campanario.</td>
-      </tr>
-      <tr>
-        <td>Iglesia de Santo Domingo</td>
-        <td>Un espacio de gran importancia espiritual y cultural para los habitantes.</td>
-      </tr>
+      <tr><th>Nombre</th><th>Descripción</th></tr>
+      <tr><td>Iglesia de la Concepción</td><td>Una de las más antiguas y emblemáticas de Mompox.</td></tr>
+      <tr><td>San Agustín</td><td>Destaca por su arquitectura colonial.</td></tr>
+      <tr><td>San Francisco</td><td>Reconocida por su imponente fachada.</td></tr>
+      <tr><td>San Juan de Dios</td><td>Con gran valor histórico y cultural.</td></tr>
+      <tr><td>Santa Bárbara</td><td>Con su estilo único y tradicional.</td></tr>
+      <tr><td>Santo Domingo</td><td>Una joya arquitectónica del periodo colonial.</td></tr>
     </table>
-
-    <h3>Galería de Imágenes</h3>
+    <h3>Galería</h3>
     <img src="img/concecion.jpg" alt="Iglesia de la Concepción">
-    <img src="img/sanagustin.jpg" alt="Iglesia de San Agustín">
-    <img src="img/sanfrancisco.jpg" alt="Iglesia de San Francisco">
-    <img src="img/sanjuandedios.jpg" alt="Iglesia de San Juan de Dios">
-    <img src="img/santabarbara.jpg" alt="Iglesia de Santa Bárbara">
-    <img src="img/santodomingo.jpg" alt="Iglesia de Santo Domingo">
-
+    <img src="img/sanagustin.jpg" alt="Iglesia San Agustín">
+    <img src="img/sanfrancisco.jpg" alt="Iglesia San Francisco">
+    <img src="img/sanjuandedios.jpg" alt="Iglesia San Juan de Dios">
+    <img src="img/santabarbara.jpg" alt="Iglesia Santa Bárbara">
+    <img src="img/santodomingo.jpg" alt="Iglesia Santo Domingo">
     <br>
-    <button onclick="volverMenu()">⬅ Regresar</button>
+    <button onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- SECCIÓN GASTRONOMÍA -->
+  <!-- Sección Gastronomía -->
   <section id="gastronomia">
-    <h2>Gastronomía Típica</h2>
-    <p>Aquí pondremos platos típicos, imágenes y descripciones.</p>
-    <button onclick="volverMenu()">⬅ Regresar</button>
+    <h2>Gastronomía de Mompox</h2>
+    <p>La riqueza gastronómica de Mompox combina sabores coloniales y tradicionales únicos.</p>
+    <table>
+      <tr><th>Plato</th><th>Descripción</th></tr>
+      <tr><td>Butifarra Ahumada</td><td>Embutido tradicional con un sabor único.</td></tr>
+      <tr><td>Queso de Capa</td><td>Queso artesanal elaborado en capas finas.</td></tr>
+      <tr><td>Dulce de Limón</td><td>Postre típico con sabor fresco y dulce.</td></tr>
+      <tr><td>Chicha de Maíz</td><td>Bebida fermentada tradicional.</td></tr>
+      <tr><td>Casabe</td><td>Torta crujiente hecha a base de yuca.</td></tr>
+    </table>
+    <h3>Galería de Platos</h3>
+    <img src="img/butifarraahumada.jpg" alt="Butifarra Ahumada">
+    <img src="img/quesodecapa.jpg" alt="Queso de Capa">
+    <img src="img/dulcedelimon.jpg" alt="Dulce de Limón">
+    <img src="img/chichademaiz.jpg" alt="Chicha de Maíz">
+    <img src="img/casabe.jpg" alt="Casabe">
+    <br>
+    <button onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- SECCIÓN HISTORIA -->
-  <section id="historia">
-    <h2>Historia de Mompox</h2>
-    <p>Aquí va la reseña histórica con imágenes y texto.</p>
-    <button onclick="volverMenu()">⬅ Regresar</button>
+  <!-- Sección Lugares Emblemáticos -->
+  <section id="lugares">
+    <h2>Lugares Emblemáticos de Mompox</h2>
+    <p>Además de sus iglesias y gastronomía, Mompox ofrece sitios históricos y naturales imperdibles.</p>
+    <table>
+      <tr><th>Lugar</th><th>Descripción</th></tr>
+      <tr><td>Plaza de Bolívar</td><td>Centro histórico con la estatua de Simón Bolívar.</td></tr>
+      <tr><td>Calle Colonial</td><td>Calles empedradas llenas de historia y casas coloniales.</td></tr>
+      <tr><td>Río Magdalena</td><td>Escenario de paseos en lancha como los de la famosa "Valerosa Tours".</td></tr>
+    </table>
+    <h3>Galería</h3>
+    <img src="img/plazabolivar.jpg" alt="Plaza de Bolívar">
+    <img src="img/callecolonial.jpg" alt="Calle Colonial">
+    <img src="img/riomagdalena.jpg" alt="Río Magdalena">
+    <br>
+    <button onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- SECCIÓN CULTURA -->
+  <!-- Sección Cultura y Tradiciones -->
   <section id="cultura">
-    <h2>Cultura y Tradiciones</h2>
-    <p>Aquí pondremos música, festividades y tradiciones.</p>
-    <button onclick="volverMenu()">⬅ Regresar</button>
+    <h2>Cultura y Tradiciones de Mompox</h2>
+    <p>Mompox es un lugar donde las tradiciones, la música y las festividades mantienen viva su esencia colonial.</p>
+    <table>
+      <tr><th>Tradición</th><th>Descripción</th></tr>
+      <tr><td>Semana Santa</td><td>Celebración solemne y reconocida a nivel nacional por sus procesiones históricas.</td></tr>
+      <tr><td>Festival de Jazz</td><td>Evento musical que reúne artistas nacionales e internacionales.</td></tr>
+      <tr><td>Artesanía en Filigrana</td><td>Elaboración de joyas con hilos de oro y plata, símbolo cultural momposino.</td></tr>
+      <tr><td>Fiestas Patronales</td><td>Eventos tradicionales en honor a los santos patronos de cada iglesia.</td></tr>
+    </table>
+    <h3>Galería Cultural</h3>
+    <img src="img/semanasanta.jpg" alt="Semana Santa en Mompox">
+    <img src="img/festivaljazz.jpg" alt="Festival de Jazz en Mompox">
+    <img src="img/filigrana.jpg" alt="Artesanía en Filigrana">
+    <br>
+    <button onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <script>
-    function mostrarSeccion(id) {
-      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-      document.getElementById(id).style.display = "block";
-    }
-    function volverMenu() {
-      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
-      document.getElementById("menu").style.display = "block";
-    }
-  </script>
+  <!-- Sección Cementerio -->
+  <section id="cementerio">
+    <h2>Cementerio de Mompox</h2>
+    <p>El Cementerio de Mompox es un lugar histórico y espiritual, famoso por sus esculturas, mausoleos y leyendas.</p>
+    <table>
+      <tr><th>Aspecto</th><th>Descripción</th></tr>
+      <tr><td>Arquitectura</td><td>Tumbas coloniales, mausoleos y esculturas de gran valor artístico.</td></tr>
+      <tr><td>Historia</td><td>En este lugar reposan personajes importantes de la historia momposina.</td></tr>
+      <tr><td>Turismo</td><td>Es visitado por su belleza y las leyendas que rodean su pasado.</td></tr>
+    </table>
+    <h3>Galería del Cementerio</h3>
+    <img src="img/cementerio1.jpg" alt="Vista del Cementerio de Mompox">
+    <img src="img/cementerio2.jpg" alt="Tumbas coloniales en Mompox">
+    <br>
+    <button onclick="mostrarSeccion('menu')">Regresar</button>
+  </section>
 </body>
 </html>
