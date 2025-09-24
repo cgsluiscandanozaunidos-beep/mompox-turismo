@@ -3,105 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turismo en Mompox</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Mompox Colonial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-image: url("img/fondoprincipal.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      display: none;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      margin: 20px;
+    }
+
+    #menu {
+      display: block;
+      padding: 50px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      border: none;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background-color: #444;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      color: white;
+    }
+
+    th, td {
+      border: 1px solid white;
+      padding: 10px;
+    }
+
+    img {
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Turismo en Mompox, Bolívar</h1>
+    <h1>Mompox Colonial</h1>
+    <h2>Bienvenidos</h2>
+    <p>Descubre la magia colonial de Santa Cruz de Mompox, patrimonio cultural de la humanidad, llena de historia, arquitectura y tradición.</p>
   </header>
 
-  <main>
-    <section id="bienvenida">
-      <h2>Bienvenidos</h2>
-      <p>
-        Descubre la magia colonial de Santa Cruz de Mompox, patrimonio cultural de la humanidad, 
-        llena de historia, arquitectura y tradición.
-      </p>
-    </section>
-  </main>
-    <!-- SECCIÓN IGLESIAS -->
+  <!-- MENÚ PRINCIPAL -->
+  <section id="menu">
+    <h2>Explora Mompox</h2>
+    <button onclick="mostrarSeccion('iglesias')">Iglesias</button>
+    <button onclick="mostrarSeccion('gastronomia')">Gastronomía</button>
+    <button onclick="mostrarSeccion('historia')">Historia</button>
+    <button onclick="mostrarSeccion('cultura')">Cultura y Tradiciones</button>
+  </section>
+
+  <!-- SECCIÓN IGLESIAS -->
   <section id="iglesias">
     <h2>Iglesias de Mompox</h2>
-    <p>Mompox conserva varias iglesias coloniales, famosas por su historia y arquitectura. Estas son las más importantes:</p>
+    <p>Mompox es reconocida por su riqueza arquitectónica y religiosa. Sus iglesias son un reflejo de la tradición colonial y del legado histórico de la ciudad.</p>
 
-    <ul>
-      <li><b>Iglesia de Santa Bárbara</b> – con su torre lateral, ícono de la ciudad.</li>
-      <li><b>Iglesia de San Francisco</b> – de estilo colonial y sobria en su diseño.</li>
-      <li><b>Iglesia de la Inmaculada Concepción</b> – ubicada en la plaza central.</li>
-      <li><b>Iglesia de San Agustín</b> – elegante y sencilla.</li>
-      <li><b>Iglesia de San Juan de Dios</b> – vinculada al antiguo hospital.</li>
-      <li><b>Iglesia de Santo Domingo</b> – una de las más antiguas y representativas.</li>
-    </ul>
-
-    <h3>Tabla de Iglesias</h3>
     <table>
       <tr>
-        <th>Iglesia</th>
-        <th>Características</th>
+        <th>Nombre de la Iglesia</th>
+        <th>Descripción</th>
       </tr>
       <tr>
-        <td>Santa Bárbara</td>
-        <td>Torre lateral barroca única en Colombia</td>
+        <td>Iglesia de la Concepción</td>
+        <td>Ubicada en el centro histórico, frente a la casona. Es uno de los templos más representativos de Mompox.</td>
       </tr>
       <tr>
-        <td>San Francisco</td>
-        <td>Arquitectura colonial sobria</td>
+        <td>Iglesia de San Agustín</td>
+        <td>Conserva un estilo colonial y es parte fundamental del patrimonio religioso de la ciudad.</td>
       </tr>
       <tr>
-        <td>Inmaculada Concepción</td>
-        <td>Ubicada en el centro histórico</td>
+        <td>Iglesia de San Francisco</td>
+        <td>Conocida por su sencillez y su valor histórico en la comunidad momposina.</td>
       </tr>
       <tr>
-        <td>San Agustín</td>
-        <td>Sencilla y elegante</td>
+        <td>Iglesia de San Juan de Dios</td>
+        <td>Un templo con gran valor patrimonial que conserva elementos originales.</td>
       </tr>
       <tr>
-        <td>San Juan de Dios</td>
-        <td>Asociada al antiguo hospital colonial</td>
+        <td>Iglesia de Santa Bárbara</td>
+        <td>Famosa por su arquitectura barroca y su icónica torre campanario.</td>
       </tr>
       <tr>
-        <td>Santo Domingo</td>
-        <td>Una de las más antiguas de la ciudad</td>
+        <td>Iglesia de Santo Domingo</td>
+        <td>Un espacio de gran importancia espiritual y cultural para los habitantes.</td>
       </tr>
     </table>
-        </table>
 
-    <h3>Galería de Iglesias</h3>
-    <div class="galeria">
-      <figure>
-        <img src="img/santabarbara.jpg" alt="Iglesia de Santa Bárbara">
-        <figcaption>Santa Bárbara</figcaption>
-      </figure>
-      <figure>
-        <img src="img/sanfrancisco.jpg" alt="Iglesia de San Francisco">
-        <figcaption>San Francisco</figcaption>
-      </figure>
-      <figure>
-        <img src="img/concecion.jpg" alt="Iglesia de la Inmaculada Concepción">
-        <figcaption>Inmaculada Concepción</figcaption>
-      </figure>
-      <figure>
-        <img src="img/sanagustin.jpg" alt="Iglesia de San Agustín">
-        <figcaption>San Agustín</figcaption>
-      </figure>
-      <figure>
-        <img src="img/sanjuandedios.jpg" alt="Iglesia de San Juan de Dios">
-        <figcaption>San Juan de Dios</figcaption>
-      </figure>
-      <figure>
-        <img src="img/santodomingo.jpg" alt="Iglesia de Santo Domingo">
-        <figcaption>Santo Domingo</figcaption>
-      </figure>
-    </div>
+    <h3>Galería de Imágenes</h3>
+    <img src="img/concecion.jpg" alt="Iglesia de la Concepción">
+    <img src="img/sanagustin.jpg" alt="Iglesia de San Agustín">
+    <img src="img/sanfrancisco.jpg" alt="Iglesia de San Francisco">
+    <img src="img/sanjuandedios.jpg" alt="Iglesia de San Juan de Dios">
+    <img src="img/santabarbara.jpg" alt="Iglesia de Santa Bárbara">
+    <img src="img/santodomingo.jpg" alt="Iglesia de Santo Domingo">
+
+    <br>
+    <button onclick="volverMenu()">⬅ Regresar</button>
   </section>
 
+  <!-- SECCIÓN GASTRONOMÍA -->
+  <section id="gastronomia">
+    <h2>Gastronomía Típica</h2>
+    <p>Aquí pondremos platos típicos, imágenes y descripciones.</p>
+    <button onclick="volverMenu()">⬅ Regresar</button>
   </section>
-  
 
+  <!-- SECCIÓN HISTORIA -->
+  <section id="historia">
+    <h2>Historia de Mompox</h2>
+    <p>Aquí va la reseña histórica con imágenes y texto.</p>
+    <button onclick="volverMenu()">⬅ Regresar</button>
+  </section>
 
-  <footer>
-    <p>Autor: [Cipa semestre 8] | Proyecto de Diseño de Sitios Web</p>
-  </footer>
+  <!-- SECCIÓN CULTURA -->
+  <section id="cultura">
+    <h2>Cultura y Tradiciones</h2>
+    <p>Aquí pondremos música, festividades y tradiciones.</p>
+    <button onclick="volverMenu()">⬅ Regresar</button>
+  </section>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+    function volverMenu() {
+      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+      document.getElementById("menu").style.display = "block";
+    }
+  </script>
 </body>
 </html>
