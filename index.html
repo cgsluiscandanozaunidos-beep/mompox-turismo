@@ -2,186 +2,116 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mompox Colonial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-image: url("img/fondoprincipal.jpg");
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      margin: 10px 0;
-    }
-    #menu, section {
-      display: none;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      margin: 20px;
-      border-radius: 15px;
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
-    }
-    #menu.active, section.active {
-      display: block;
-      opacity: 1;
-    }
-    button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      background-color: #f0a500;
-      color: white;
-      transition: 0.3s;
-    }
-    button:hover {
-      background-color: #d48806;
-    }
-    img {
-      width: 220px;
-      height: 150px;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      background: white;
-      color: black;
-    }
-    th, td {
-      border: 1px solid #333;
-      padding: 10px;
-    }
-    video {
-      width: 80%;
-      max-width: 800px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      margin: 20px auto;
-      display: block;
-    }
-    footer {
-      background: rgba(0, 0, 0, 0.8);
-      padding: 15px;
-      margin-top: 30px;
-      font-size: 14px;
-      color: #ccc;
-    }
-  </style>
+  <title>Mompox Colonial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <script>
     function mostrarSeccion(id) {
-      document.querySelectorAll('section, #menu').forEach(s => {
-        s.classList.remove("active");
-      });
+      document.querySelectorAll('section, #menu').forEach(s => s.classList.remove("active"));
       document.getElementById(id).classList.add("active");
     }
-
-    window.onload = () => {
-      document.getElementById("menu").classList.add("active");
-    };
+    window.onload = () => document.getElementById("menu").classList.add("active");
   </script>
 </head>
 <body>
-  <header>
+  <header class="text-center text-white p-4" style="background: rgba(0,0,0,0.6);">
     <h1>Mompox Colonial</h1>
     <h2>Bienvenidos</h2>
     <p>Descubre la magia colonial de Santa Cruz de Mompox, patrimonio cultural de la humanidad, llena de historia, arquitectura y tradición.</p>
   </header>
 
-  <!-- Menú principal -->
-  <div id="menu">
+  <div id="menu" class="active text-center">
     <h2>Explora Mompox</h2>
-    <button onclick="mostrarSeccion('iglesias')">Iglesias</button>
-    <button onclick="mostrarSeccion('gastronomia')">Gastronomía</button>
-    <button onclick="mostrarSeccion('lugares')">Turismo y Lugares Emblemáticos</button>
-    <button onclick="mostrarSeccion('cultura')">Cultura y Tradiciones</button>
-    <button onclick="mostrarSeccion('cementerio')">Cementerio</button>
-    <button onclick="mostrarSeccion('video')">Video Turístico</button>
-    <a href="contacto.html"><button>Formulario de Contacto</button></a>
+    <button class="btn btn-warning m-2" onclick="mostrarSeccion('iglesias')">Iglesias</button>
+    <button class="btn btn-warning m-2" onclick="mostrarSeccion('gastronomia')">Gastronomía</button>
+    <button class="btn btn-warning m-2" onclick="mostrarSeccion('lugares')">Lugares Emblemáticos</button>
+    <button class="btn btn-warning m-2" onclick="mostrarSeccion('cultura')">Cultura y Tradiciones</button>
+    <button class="btn btn-warning m-2" onclick="mostrarSeccion('cementerio')">Cementerio</button>
+    <button class="btn btn-warning m-2" onclick="mostrarSeccion('video')">Video Turístico</button>
+    <a href="contacto.html" class="btn btn-primary m-2">Formulario de Contacto</a>
   </div>
 
-  <!-- Sección Iglesias -->
-  <section id="iglesias">
+  <section id="iglesias" class="text-center">
     <h2>Iglesias de Mompox</h2>
     <p>Mompox cuenta con majestuosas iglesias coloniales que reflejan su historia y tradición.</p>
-    <img src="img/concecion.jpg" alt="Iglesia de la Concepción">
-    <img src="img/sanagustin.jpg" alt="San Agustín">
-    <img src="img/sanfrancisco.jpg" alt="San Francisco">
-    <img src="img/sanjuandedios.jpg" alt="San Juan de Dios">
-    <img src="img/santabarbara.jpg" alt="Santa Bárbara">
-    <img src="img/santodomingo.jpg" alt="Santo Domingo">
-    <br>
-    <button onclick="mostrarSeccion('menu')">Regresar</button>
+    <div class="container">
+      <div class="row">
+        <img src="img/concecion.jpg" class="col-md-4 img-fluid rounded m-2" alt="Concepción">
+        <img src="img/sanagustin.jpg" class="col-md-4 img-fluid rounded m-2" alt="San Agustín">
+        <img src="img/sanfrancisco.jpg" class="col-md-4 img-fluid rounded m-2" alt="San Francisco">
+        <img src="img/sanjuandedios.jpg" class="col-md-4 img-fluid rounded m-2" alt="San Juan de Dios">
+        <img src="img/santabarbara.jpg" class="col-md-4 img-fluid rounded m-2" alt="Santa Bárbara">
+        <img src="img/santodomingo.jpg" class="col-md-4 img-fluid rounded m-2" alt="Santo Domingo">
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3" onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- Sección Gastronomía -->
-  <section id="gastronomia">
+  <section id="gastronomia" class="text-center">
     <h2>Gastronomía de Mompox</h2>
-    <img src="img/bahumada.jpg" alt="Butifarra Ahumada">
-    <img src="img/quesodecapa.jpg" alt="Queso de Capa">
-    <img src="img/dulcedelimon.jpg" alt="Dulce de Limón">
-    <img src="img/chichademaiz.jpg" alt="Chicha de Maíz">
-    <img src="img/ksabe.jpg" alt="Casabe">
-    <br>
-    <button onclick="mostrarSeccion('menu')">Regresar</button>
+    <p>La riqueza gastronómica de Mompox combina sabores coloniales y tradicionales únicos.</p>
+    <div class="container">
+      <div class="row">
+        <img src="img/bahumada.jpg" class="col-md-4 img-fluid rounded m-2" alt="Butifarra Ahumada">
+        <img src="img/quesodecapa.jpg" class="col-md-4 img-fluid rounded m-2" alt="Queso de Capa">
+        <img src="img/dulcedelimon.jpg" class="col-md-4 img-fluid rounded m-2" alt="Dulce de Limón">
+        <img src="img/chichademaiz.jpg" class="col-md-4 img-fluid rounded m-2" alt="Chicha de Maíz">
+        <img src="img/ksabe.jpg" class="col-md-4 img-fluid rounded m-2" alt="Casabe">
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3" onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- Sección Lugares Emblemáticos -->
-  <section id="lugares">
-    <h2>Lugares Emblemáticos de Mompox</h2>
-    <img src="img/plazabolivar.jpg" alt="Plaza de Bolívar">
-    <img src="img/callecolonial.jpg" alt="Calle Colonial">
-    <img src="img/riomagdalena.jpg" alt="Río Magdalena">
-    <br>
-    <button onclick="mostrarSeccion('menu')">Regresar</button>
+  <section id="lugares" class="text-center">
+    <h2>Lugares Emblemáticos</h2>
+    <p>Disfruta los sitios históricos más importantes de la ciudad.</p>
+    <div class="container">
+      <div class="row">
+        <img src="img/plazabolivar.jpg" class="col-md-4 img-fluid rounded m-2" alt="Plaza Bolívar">
+        <img src="img/callecolonial.jpg" class="col-md-4 img-fluid rounded m-2" alt="Calle Colonial">
+        <img src="img/riomagdalena.jpg" class="col-md-4 img-fluid rounded m-2" alt="Río Magdalena">
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3" onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- Sección Cultura -->
-  <section id="cultura">
+  <section id="cultura" class="text-center">
     <h2>Cultura y Tradiciones</h2>
-    <img src="img/semanasanta.jpg" alt="Semana Santa">
-    <img src="img/festivaljazz.jpg" alt="Festival de Jazz">
-    <img src="img/filigrana.jpg" alt="Filigrana">
-    <br>
-    <button onclick="mostrarSeccion('menu')">Regresar</button>
+    <p>Fiestas, arte y patrimonio momposino.</p>
+    <div class="container">
+      <div class="row">
+        <img src="img/semanasanta.jpg" class="col-md-4 img-fluid rounded m-2" alt="Semana Santa">
+        <img src="img/festivaljazz.jpg" class="col-md-4 img-fluid rounded m-2" alt="Festival de Jazz">
+        <img src="img/filigrana.jpg" class="col-md-4 img-fluid rounded m-2" alt="Filigrana">
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3" onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- Sección Cementerio -->
-  <section id="cementerio">
+  <section id="cementerio" class="text-center">
     <h2>Cementerio de Mompox</h2>
-    <img src="img/cementerio1.jpg" alt="Cementerio">
-    <img src="img/cementerio2.jpg" alt="Cementerio">
-    <br>
-    <button onclick="mostrarSeccion('menu')">Regresar</button>
+    <p>Un sitio cargado de historia, arte y leyenda.</p>
+    <div class="container">
+      <div class="row">
+        <img src="img/cementerio1.jpg" class="col-md-4 img-fluid rounded m-2" alt="Cementerio">
+        <img src="img/cementerio2.jpg" class="col-md-4 img-fluid rounded m-2" alt="Tumbas Coloniales">
+      </div>
+    </div>
+    <button class="btn btn-secondary mt-3" onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <!-- Sección Video -->
-  <section id="video">
-    <h2>Video Turístico de Mompox</h2>
-    <video autoplay muted loop playsinline>
+  <section id="video" class="text-center">
+    <h2>Video Turístico</h2>
+    <video autoplay muted loop playsinline class="rounded shadow">
       <source src="vid/videomompox.mp4" type="video/mp4">
-      Tu navegador no soporta la reproducción de video.
+      Tu navegador no soporta video.
     </video>
-    <button onclick="mostrarSeccion('menu')">Regresar</button>
+    <br>
+    <button class="btn btn-secondary mt-3" onclick="mostrarSeccion('menu')">Regresar</button>
   </section>
 
-  <footer>
+  <footer class="text-center text-white p-3" style="background: rgba(0,0,0,0.8);">
     Universidad de Cartagena – Sede Mompox – CIPA#1 – Diseño de Sitios Web
   </footer>
 </body>
