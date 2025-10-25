@@ -19,8 +19,6 @@
   <!-- Video de fondo -->
   <video id="bg-video" autoplay muted loop playsinline poster="img/fondoprincipal.jpg">
     <source src="vid/videomompoxf.mp4" type="video/mp4">
-    <!-- Si hay otro nombre alternativo: -->
-    <!-- <source src="vid/videomompox.mp4" type="video/mp4"> -->
     Tu navegador no soporta video de fondo.
   </video>
 
@@ -62,8 +60,11 @@
       <section id="home" class="panel active-panel">
         <div class="hero-text">
           <h2 class="playfair hero-title">Bienvenidos</h2>
-          <p class="roboto hero-sub">Historia, arquitectura y tradición en el corazón de Mompox.</p>
-          <button class="btn btn-primary btn-explore" data-target="iglesias">Explorar Iglesias</button>
+          <p class="roboto hero-sub">
+            Historia, arquitectura y tradición en el corazón de Mompox.  
+            Este lugar mágico, Patrimonio de la Humanidad, te invita a recorrer sus calles empedradas, admirar sus iglesias coloniales, disfrutar su gastronomía única y vivir la calidez de su gente.  
+            Cada rincón guarda un pedazo de historia que combina el pasado colonial con la esencia viva de su cultura momposina.
+          </p>
         </div>
       </section>
 
@@ -147,7 +148,7 @@
             <img src="img/cementerio1.jpg" alt="Cementerio 1" class="foto"
                  data-title="Cementerio de Mompox" data-desc="Panteones y esculturas históricas." data-contact="">
             <img src="img/cementerio2.jpg" alt="Cementerio 2" class="foto"
-                 data-title="Sector histórico" data-desc="Lapidas y memoriales centenarios." data-contact="">
+                 data-title="Sector histórico" data-desc="Lápidas y memoriales centenarios." data-contact="">
           </div>
         </div>
       </section>
@@ -169,7 +170,7 @@
     </footer>
   </div>
 
-  <!-- Modal para mostrar info de cada imagen -->
+  <!-- Modal -->
   <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -188,21 +189,18 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS (modales) -->
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script de navegación y comportamiento -->
+  <!-- Script de navegación -->
   <script>
-    // Elements
     const sidebar = document.getElementById('sidebar');
     const menuToggle = document.getElementById('menu-toggle');
     const closeSidebar = document.getElementById('close-sidebar');
-    const navLinks = document.querySelectorAll('.nav-link[data-target], .btn-explore, .nav-link[data-target]');
     const panels = document.querySelectorAll('.panel');
     const backBtn = document.getElementById('back-btn');
     const homePanel = document.getElementById('home');
 
-    // Abrir/Cerrar sidebar
     menuToggle.addEventListener('click', () => {
       sidebar.classList.add('open');
       document.body.classList.add('no-scroll');
@@ -212,9 +210,8 @@
       document.body.classList.remove('no-scroll');
     });
 
-    // Navegación entre secciones
     document.querySelectorAll('[data-target]').forEach(elem => {
-      elem.addEventListener('click', (e) => {
+      elem.addEventListener('click', e => {
         e.preventDefault();
         const id = elem.getAttribute('data-target');
         showSection(id);
@@ -233,25 +230,21 @@
         homePanel.classList.add('active-panel');
         backBtn.style.display = 'none';
       }
-      // scroll top of content for mobile
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // volver al menú principal (home)
     backBtn.addEventListener('click', () => {
       panels.forEach(p => p.classList.remove('active-panel'));
       homePanel.classList.add('active-panel');
       backBtn.style.display = 'none';
     });
 
-    // Inicializar: mostrar home
     document.addEventListener('DOMContentLoaded', () => {
       panels.forEach(p => p.classList.remove('active-panel'));
       homePanel.classList.add('active-panel');
       backBtn.style.display = 'none';
     });
 
-    // Modal info al hacer click en imagenes .foto
     const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
     document.querySelectorAll('.foto').forEach(img => {
       img.addEventListener('click', () => {
@@ -271,7 +264,6 @@
       });
     });
 
-    // Si el video de fondo no es soportado (por ejemplo mobile), mostrar poster.
     const bgVideo = document.getElementById('bg-video');
     bgVideo.addEventListener('error', () => {
       document.querySelector('.overlay').style.background = 'url(img/fondoprincipal.jpg) center/cover no-repeat';
