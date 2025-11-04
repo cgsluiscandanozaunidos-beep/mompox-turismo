@@ -4,46 +4,38 @@
   <meta charset="UTF-8" />
   <title>Mompox Colonial</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Bootstrap (para modales y utilidades) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Google Fonts (varias tipografías) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-
-  <!-- estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;500&family=Lora:wght@400;600&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-  <!-- Video de fondo -->
+  <!-- Video fondo -->
   <video id="bg-video" autoplay muted loop playsinline poster="img/fondoprincipal.jpg">
     <source src="vid/videomompoxf.mp4" type="video/mp4">
     Tu navegador no soporta video de fondo.
   </video>
-
-  <!-- Contenedor principal (sobre el video) -->
   <div class="overlay"></div>
+
   <div class="site-wrapper">
     <header class="site-header">
-      <button id="menu-toggle" class="btn btn-menu" aria-label="Abrir menú">☰ Menú</button>
+      <button id="menu-toggle" class="btn btn-menu">☰ Menú</button>
       <div class="brand">
         <h1 class="playfair">Mompox Colonial</h1>
         <p class="montserrat">Descubre la magia colonial de Santa Cruz de Mompox</p>
       </div>
     </header>
 
-    <!-- Sidebar / Menú deslizable -->
+    <!-- Sidebar -->
     <nav id="sidebar" class="sidebar">
-      <button id="close-sidebar" class="close-btn" aria-label="Cerrar menú">✕</button>
+      <button id="close-sidebar" class="close-btn">✕</button>
       <h3 class="sidebar-title">Explora Mompox</h3>
       <ul class="sidebar-list">
-        <li><a href="#" data-target="iglesias" class="nav-link">Iglesias</a></li>
-        <li><a href="#" data-target="gastronomia" class="nav-link">Gastronomía</a></li>
-        <li><a href="#" data-target="lugares" class="nav-link">Lugares Emblemáticos</a></li>
-        <li><a href="#" data-target="cultura" class="nav-link">Cultura y Tradiciones</a></li>
-        <li><a href="#" data-target="cementerio" class="nav-link">Cementerio</a></li>
-        <li><a href="#" data-target="video" class="nav-link">Video Turístico</a></li>
+        <li><a href="#" data-target="iglesias" data-color="#c0392b" class="nav-link">Iglesias</a></li>
+        <li><a href="#" data-target="gastronomia" data-color="#27ae60" class="nav-link">Gastronomía</a></li>
+        <li><a href="#" data-target="lugares" data-color="#2980b9" class="nav-link">Lugares Emblemáticos</a></li>
+        <li><a href="#" data-target="cultura" data-color="#8e44ad" class="nav-link">Cultura y Tradiciones</a></li>
+        <li><a href="#" data-target="cementerio" data-color="#7f8c8d" class="nav-link">Cementerio</a></li>
+        <li><a href="#" data-target="video" data-color="#f39c12" class="nav-link">Video Turístico</a></li>
         <li><a href="contacto.html" class="nav-link">Formulario de Contacto</a></li>
       </ul>
       <div class="sidebar-footer">
@@ -51,115 +43,90 @@
       </div>
     </nav>
 
-    <!-- Flecha regresar (aparece cuando se muestra una sección) -->
-    <button id="back-btn" class="back-btn" title="Regresar al menú" aria-label="Regresar">←</button>
+    <button id="back-btn" class="back-btn">←</button>
 
-    <!-- Contenido: secciones -->
     <main class="content">
-      <!-- MENU (pantalla principal con introducción) -->
+      <!-- HOME -->
       <section id="home" class="panel active-panel">
         <div class="hero-text">
           <h2 class="playfair hero-title">Bienvenidos</h2>
           <p class="roboto hero-sub">
             Historia, arquitectura y tradición en el corazón de Mompox.  
-            Este lugar mágico, Patrimonio de la Humanidad, te invita a recorrer sus calles empedradas, admirar sus iglesias coloniales, disfrutar su gastronomía única y vivir la calidez de su gente.  
-            Cada rincón guarda un pedazo de historia que combina el pasado colonial con la esencia viva de su cultura momposina.
+            Patrimonio de la Humanidad, con calles empedradas, iglesias coloniales, gastronomía única y cultura viva.
           </p>
         </div>
       </section>
 
       <!-- IGLESIAS -->
-      <section id="iglesias" class="panel">
+      <section id="iglesias" class="panel iglesias-panel">
         <div class="panel-inner">
-          <h2 class="playfair">Iglesias de Mompox</h2>
-          <p class="roboto">Majestuosas iglesias coloniales que reflejan historia y devoción.</p>
-
+          <h2>Iglesias de Mompox</h2>
+          <p>Las iglesias de Mompox son testigos silenciosos del pasado colonial y la fe de su pueblo. Cada una posee una arquitectura única y detalles artísticos que reflejan siglos de historia.</p>
           <div class="galeria">
-            <img src="img/concecion.jpg" alt="Iglesia de la Concepción" class="foto"
-                 data-title="Iglesia de la Concepción" data-desc="Fundada en ... (info de ejemplo). Horario: 8:00 - 17:00." data-contact="">
-            <img src="img/sanagustin.jpg" alt="San Agustín" class="foto"
-                 data-title="Iglesia San Agustín" data-desc="Construida en ... (info ejemplo). Entrada libre." data-contact="">
-            <img src="img/sanfrancisco.jpg" alt="San Francisco" class="foto"
-                 data-title="Iglesia San Francisco" data-desc="Obra del siglo ... (ejemplo)." data-contact="">
-            <img src="img/sanjuandedios.jpg" alt="San Juan de Dios" class="foto"
-                 data-title="San Juan de Dios" data-desc="Destaca por ... (ejemplo)." data-contact="">
+            <img src="img/concecion.jpg" data-title="Iglesia de la Concepción" data-desc="Fundada en el siglo XVII, la Iglesia de la Concepción es una de las más representativas de Mompox. Su fachada blanca y dorada destaca en el paisaje urbano, mientras que su interior guarda altares tallados en madera y piezas de arte religioso. Es un lugar de profunda devoción y belleza arquitectónica." class="foto">
+            <img src="img/sanagustin.jpg" data-title="Iglesia San Agustín" data-desc="Construida en el siglo XVIII, la Iglesia San Agustín es conocida por su imponente campanario y su retablo barroco en pan de oro. Su historia está ligada a las comunidades religiosas que formaron parte del desarrollo social y espiritual de Mompox. Actualmente sigue siendo un punto de encuentro para fieles y turistas." class="foto">
+            <img src="img/sanfrancisco.jpg" data-title="Iglesia San Francisco" data-desc="La Iglesia San Francisco es un emblema del estilo colonial puro. Su estructura conserva los materiales originales de su construcción, con paredes gruesas y techos de madera. Además, su convento adyacente alberga relatos sobre la vida religiosa del período virreinal." class="foto">
+            <img src="img/sanjuandedios.jpg" data-title="Iglesia San Juan de Dios" data-desc="Esta iglesia, situada junto al antiguo hospital, fue construida en el siglo XVII. Destaca por su retablo principal tallado en madera y por ser símbolo del servicio religioso a los enfermos y peregrinos. Su entorno evoca serenidad y espiritualidad." class="foto">
           </div>
         </div>
       </section>
 
       <!-- GASTRONOMÍA -->
-      <section id="gastronomia" class="panel">
+      <section id="gastronomia" class="panel gastronomia-panel">
         <div class="panel-inner">
-          <h2 class="playfair">Gastronomía de Mompox</h2>
-          <p class="roboto">Sabores locales: butifarra, queso de capa, dulces y más.</p>
-
+          <h2>Gastronomía de Mompox</h2>
+          <p>La gastronomía momposina es una fusión de tradición, sabor y herencia cultural. En cada plato se saborea la historia del Magdalena Medio.  
+          Para reservas y pedidos puedes comunicarte al número <strong>+57 310 456 7890</strong>.</p>
           <div class="galeria">
-            <img src="img/bahumada.jpg" alt="Butifarra Ahumada" class="foto"
-                 data-title="Butifarra Ahumada - 'Doña Rosa'" data-desc="Butifarra artesanal, especialidad local." data-contact="+57 300 000 0001">
-            <img src="img/quesodecapa.jpg" alt="Queso de Capa" class="foto"
-                 data-title="Queso de Capa - 'Quesos Mompox'" data-desc="Queso tradicional hecho a mano." data-contact="+57 300 000 0002">
-            <img src="img/dulcedelimon.jpg" alt="Dulce de Limón" class="foto"
-                 data-title="Dulce de Limón - 'La Dulcería'" data-desc="Postres artesanales y conservas." data-contact="+57 300 000 0003">
-            <img src="img/chichademaiz.jpg" alt="Chicha de Maíz" class="foto"
-                 data-title="Chicha de Maíz" data-desc="Bebida tradicional de la región." data-contact="+57 300 000 0004">
+            <img src="img/bahumada.jpg" data-title="Butifarra Ahumada" data-desc="Preparación artesanal de carne molida y especias, envuelta en tripa natural y cocida lentamente al vapor antes de ser ahumada. Es una delicia tradicional servida con limón y yuca." class="foto">
+            <img src="img/quesodecapa.jpg" data-title="Queso de Capa" data-desc="Producto típico hecho a mano con técnicas antiguas transmitidas de generación en generación. Su textura suave y sabor ligeramente salado lo hacen ideal para acompañar arepas y dulces locales." class="foto">
+            <img src="img/dulcedelimon.jpg" data-title="Dulce de Limón" data-desc="Deliciosos dulces artesanales preparados con frutas frescas, azúcar y la paciencia de las manos momposinas. Su aroma y sabor son un símbolo de hospitalidad en cada casa." class="foto">
           </div>
         </div>
       </section>
 
       <!-- LUGARES -->
-      <section id="lugares" class="panel">
+      <section id="lugares" class="panel lugares-panel">
         <div class="panel-inner">
-          <h2 class="playfair">Lugares Emblemáticos</h2>
-          <p class="roboto">Plaza, calles coloniales y el majestuoso río Magdalena.</p>
-
+          <h2>Lugares Emblemáticos</h2>
+          <p>Calles coloniales, plazas y el majestuoso río Magdalena conforman el paisaje histórico que define a Mompox como una joya del Caribe colombiano.</p>
           <div class="galeria">
-            <img src="img/plazabolivar.jpg" alt="Plaza de Bolívar" class="foto"
-                 data-title="Plaza de Bolívar" data-desc="Centro histórico y punto de encuentro." data-contact="">
-            <img src="img/callecolonial.jpg" alt="Calle Colonial" class="foto"
-                 data-title="Calle Colonial" data-desc="Recorre la arquitectura y murales." data-contact="">
-            <img src="img/riomagdalena.jpg" alt="Río Magdalena" class="foto"
-                 data-title="Río Magdalena" data-desc="Paseos en bote y atardeceres." data-contact="">
+            <img src="img/plazabolivar.jpg" data-title="Plaza de Bolívar" data-desc="Centro histórico y punto de encuentro donde se celebran festividades y eventos culturales. Rodeada de edificaciones coloniales, es ideal para recorrer al atardecer." class="foto">
+            <img src="img/riomagdalena.jpg" data-title="Río Magdalena" data-desc="El río que dio vida a Mompox, testigo del comercio, la cultura y los viajes que moldearon su historia. Sus paseos fluviales ofrecen vistas inigualables de la ciudad." class="foto">
           </div>
         </div>
       </section>
 
       <!-- CULTURA -->
-      <section id="cultura" class="panel">
+      <section id="cultura" class="panel cultura-panel">
         <div class="panel-inner">
-          <h2 class="playfair">Cultura y Tradiciones</h2>
+          <h2>Cultura y Tradiciones</h2>
+          <p>La cultura momposina se expresa en su música, procesiones, festivales y oficios artesanales. Cada evento mantiene viva la identidad y el orgullo de su gente.</p>
           <div class="galeria">
-            <img src="img/semanasanta.jpg" alt="Semana Santa" class="foto"
-                 data-title="Semana Santa" data-desc="Celebraciones religiosas y procesiones." data-contact="">
-            <img src="img/festivaljazz.jpg" alt="Festival de Jazz" class="foto"
-                 data-title="Festival de Jazz" data-desc="Eventos culturales y conciertos." data-contact="">
-            <img src="img/filigrana.jpg" alt="Filigrana" class="foto"
-                 data-title="Filigrana" data-desc="Artesanía en oro y plata, taller y ventas." data-contact="+57 300 000 0005">
+            <img src="img/semanasanta.jpg" data-title="Semana Santa" data-desc="Celebración declarada Patrimonio Cultural Inmaterial de la Nación. Las procesiones, acompañadas por bandas y velas, crean un ambiente de respeto, silencio y fe." class="foto">
+            <img src="img/festivaljazz.jpg" data-title="Festival de Jazz" data-desc="Evento cultural que reúne a músicos nacionales e internacionales en escenarios coloniales. Una mezcla perfecta entre historia, arte y melodías del mundo." class="foto">
           </div>
         </div>
       </section>
 
       <!-- CEMENTERIO -->
-      <section id="cementerio" class="panel">
+      <section id="cementerio" class="panel cementerio-panel">
         <div class="panel-inner">
-          <h2 class="playfair">Cementerio de Mompox</h2>
-          <p class="roboto">Arquitectura y memoria: un recorrido histórico.</p>
-
+          <h2>Cementerio de Mompox</h2>
+          <p>El Cementerio de Mompox es una joya arquitectónica que combina arte, historia y memoria. Sus esculturas y mausoleos cuentan las historias de familias ilustres y personajes anónimos.</p>
           <div class="galeria">
-            <img src="img/cementerio1.jpg" alt="Cementerio 1" class="foto"
-                 data-title="Cementerio de Mompox" data-desc="Panteones y esculturas históricas." data-contact="">
-            <img src="img/cementerio2.jpg" alt="Cementerio 2" class="foto"
-                 data-title="Sector histórico" data-desc="Lápidas y memoriales centenarios." data-contact="">
+            <img src="img/cementerio1.jpg" data-title="Cementerio Principal" data-desc="Conocido por sus tumbas blancas y esculturas en mármol, es considerado uno de los cementerios más bellos del país. Su atmósfera de paz invita a la reflexión." class="foto">
+            <img src="img/cementerio2.jpg" data-title="Sector Antiguo" data-desc="Zona donde descansan los restos de los primeros pobladores de la ciudad. Las lápidas y criptas conservan inscripciones centenarias y obras de arte funerario." class="foto">
           </div>
         </div>
       </section>
 
       <!-- VIDEO -->
-      <section id="video" class="panel">
+      <section id="video" class="panel video-panel">
         <div class="panel-inner">
-          <h2 class="playfair">Video Turístico</h2>
-          <video id="tour-video" controls playsinline>
+          <h2>Video Turístico</h2>
+          <video id="tour-video" controls>
             <source src="vid/videomompoxf.mp4" type="video/mp4">
-            Tu navegador no soporta video.
           </video>
         </div>
       </section>
@@ -170,29 +137,26 @@
     </footer>
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="infoModalLabel">Título</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+  <!-- Modal mejorado -->
+  <div class="modal fade" id="infoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-light">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="infoModalLabel"></h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body">
-          <p id="infoDesc">Descripción...</p>
-          <p id="infoContact" class="fw-bold"></p>
+        <div class="modal-body text-center">
+          <img id="infoImage" class="img-fluid rounded shadow mb-3" style="max-height:400px;">
+          <p id="infoDesc" class="mt-2"></p>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script de navegación -->
   <script>
     const sidebar = document.getElementById('sidebar');
     const menuToggle = document.getElementById('menu-toggle');
@@ -200,73 +164,42 @@
     const panels = document.querySelectorAll('.panel');
     const backBtn = document.getElementById('back-btn');
     const homePanel = document.getElementById('home');
+    const overlay = document.querySelector('.overlay');
 
-    menuToggle.addEventListener('click', () => {
-      sidebar.classList.add('open');
-      document.body.classList.add('no-scroll');
-    });
-    closeSidebar.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      document.body.classList.remove('no-scroll');
-    });
+    menuToggle.addEventListener('click', () => sidebar.classList.add('open'));
+    closeSidebar.addEventListener('click', () => sidebar.classList.remove('open'));
 
-    document.querySelectorAll('[data-target]').forEach(elem => {
-      elem.addEventListener('click', e => {
+    // Mostrar secciones y cambiar color según categoría
+    document.querySelectorAll('.nav-link[data-target]').forEach(link => {
+      link.addEventListener('click', e => {
         e.preventDefault();
-        const id = elem.getAttribute('data-target');
-        showSection(id);
+        const targetId = link.dataset.target;
+        const color = link.dataset.color || '#ffb03b';
+        overlay.style.background = `linear-gradient(180deg, ${color}80, rgba(0,0,0,0.6))`;
+        panels.forEach(p => p.classList.remove('active-panel'));
+        document.getElementById(targetId).classList.add('active-panel');
         sidebar.classList.remove('open');
-        document.body.classList.remove('no-scroll');
+        backBtn.style.display = 'inline-block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
-
-    function showSection(id) {
-      panels.forEach(p => p.classList.remove('active-panel'));
-      const target = document.getElementById(id);
-      if (target) {
-        target.classList.add('active-panel');
-        backBtn.style.display = 'inline-block';
-      } else {
-        homePanel.classList.add('active-panel');
-        backBtn.style.display = 'none';
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
 
     backBtn.addEventListener('click', () => {
       panels.forEach(p => p.classList.remove('active-panel'));
       homePanel.classList.add('active-panel');
+      overlay.style.background = 'linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55))';
       backBtn.style.display = 'none';
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      panels.forEach(p => p.classList.remove('active-panel'));
-      homePanel.classList.add('active-panel');
-      backBtn.style.display = 'none';
-    });
-
+    // Modal de imagen e info
     const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
     document.querySelectorAll('.foto').forEach(img => {
       img.addEventListener('click', () => {
-        const title = img.dataset.title || img.alt;
-        const desc = img.dataset.desc || 'Sin descripción.';
-        const contact = img.dataset.contact || '';
-        document.getElementById('infoModalLabel').textContent = title;
-        document.getElementById('infoDesc').textContent = desc;
-        const contactEl = document.getElementById('infoContact');
-        if (contact) {
-          contactEl.innerHTML = 'Contacto: ' + contact + ' <small class="text-muted">(número de ejemplo)</small>';
-          contactEl.style.display = 'block';
-        } else {
-          contactEl.style.display = 'none';
-        }
+        document.getElementById('infoModalLabel').textContent = img.dataset.title;
+        document.getElementById('infoImage').src = img.src;
+        document.getElementById('infoDesc').textContent = img.dataset.desc;
         infoModal.show();
       });
-    });
-
-    const bgVideo = document.getElementById('bg-video');
-    bgVideo.addEventListener('error', () => {
-      document.querySelector('.overlay').style.background = 'url(img/fondoprincipal.jpg) center/cover no-repeat';
     });
   </script>
 </body>
